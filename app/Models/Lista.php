@@ -10,4 +10,5 @@ use Laravel\Sanctum\HasApiTokens;
 class Lista extends Model
 {
     use HasFactory, HasApiTokens;
+    protected $fillable = ['nome','user_id'];
 }
