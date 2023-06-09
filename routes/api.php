@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ListsController;
 use App\Http\Controllers\Api\ProdutoController;
@@ -29,4 +29,5 @@ Route::group(['middleware' => ["auth:sanctum"]], function(){
     Route::get("profile", [UserController::class, "profile"]);
     Route::resource("listas", ListsController::class);
     Route::resource("produtos", ProdutoController::class);
+    Route::post("clonar/{id}", [ApiController::class, "cloneList"]);
 });
