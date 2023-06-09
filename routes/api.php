@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ListsController;
+use App\Http\Controllers\Api\ProdutoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,6 @@ Route::post("login", [UserController::class, "login"]);
 
 Route::group(['middleware' => ["auth:sanctum"]], function(){
     Route::get("profile", [UserController::class, "profile"]);
-    Route::get("listas", [ListsController::class, "index"]);
-    Route::get("listar/{id}", [ListsController::class, "show"]);
-    Route::post("lista/new", [ListsController::class, "store"]);
-    Route::put("lista/update/{id}", [ListsController::class, "update"]);
-    Route::delete("lista/delete/{id}", [ListsController::class, "delete"]);
+    Route::resource("listas", ListsController::class);
+    Route::resource("produtos", ProdutoController::class);
 });

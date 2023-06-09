@@ -61,7 +61,7 @@ class ListsController extends Controller
     {
         //$produtos = DB::table('listas')->join('produtos','listas.id', '=', "produtos.listas_id")->select('listas.id','listas.nome','produtos.id','produtos.nome','produtos.quantidade')->where('listas.user_id', $userId)->where("produtos.listas_id",$listaId)->get();
         $lista = Lista::where('id',$listaId)->first();
-        $produtos = Produto::where('listas_id', $listaId)->get();
+        $produtos = Produto::where('lista_id', $listaId)->get();
         return response()->json([
             'status' => 'success',
             'message' => 'Showing products in the list',
@@ -107,8 +107,12 @@ class ListsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Lista $lista)
     {
-        //
+        $lista->delete();
+        return response()->json([
+            'status' => "success",
+            'message' => "List deleted successfully"
+        ], 200);
     }
 }

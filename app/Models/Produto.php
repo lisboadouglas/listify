@@ -9,5 +9,5 @@ use Laravel\Sanctum\HasApiTokens;
 class Produto extends Model
 {
     use HasFactory, HasApiTokens;
-    protected $fillable = ["nome", "quantidade", "listas_id"];
+    protected $fillable = ["nome", "quantidade", "lista_id"];
 }
