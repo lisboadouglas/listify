@@ -18,6 +18,11 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 This documentation is intended to describe the Listify API – Your shopping list
 online, so you can manipulate it through GET, POST, PUT and DELETE methods.
 
+### API DOCUMENTATION
+- [API DOCUMENTATION](https://drive.google.com/file/d/1Y8EWYkIfWpb-IVURgxNWJWOe9kFYBNfd/view?usp=sharing).
+
+### POSTMAN COLLECTION
+- [POSTMAN](https://documenter.getpostman.com/view/14634687/2s93sc4CUb)
 ### Check out the resources that are available
 
 - **Users**
