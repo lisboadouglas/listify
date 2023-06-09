@@ -1,11 +1,5 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center" style="font-size: 60px"> Listify </p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
 ## About Laravel
 
@@ -21,45 +15,62 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+This documentation is intended to describe the Listify API – Your shopping list
+online, so you can manipulate it through GET, POST, PUT and DELETE methods.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Check out the resources that are available
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Users**
+-- **The Register**
+-- **The Login**
+-- **The Profile**
+- **Lists**
+-- **List registration**
+-- **Displaying all lists**,
+-- **Displaying a specific list (Displays all added products)**
+-- **Updating the list (only updates the list and not the products)**
+-- **Removing a list**,
+-- **Cloning a list**
+- **Products:**
+-- **The Register of products to a list,**
+-- **Displays all products from a list,**
+-- **Updating product data,**
+-- **Removing a product**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation and Usage
+Create Mysql Database of your choice
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Clone this repo
+```bash
+git clone https://github.com/lisboadouglas/listify/ listify
+```
 
-### Premium Partners
+Go to listify folder and create .env file:
+```bash
+cp .env.example .env
+nano .env
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Change `.env` file with environment variables:
 
-## Contributing
+```bash
+DB_CONNECTION=mysql
+DB_HOST=%db_host%
+DB_PORT=3306
+DB_DATABASE=%db_name%
+DB_USERNAME=%db_user%
+DB_PASSWORD=%db_pass%
+```
+Install dependencies, key generate, clear cache, run migrations:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer install #install all dependencies
+php artisan migrate #populate db with all tables
+php artisan key:generate #register a key for the use in laravel
+php artisan config:cache #clear cache 
+php artisan serve #starta web application
+```
 
 ## License
 
